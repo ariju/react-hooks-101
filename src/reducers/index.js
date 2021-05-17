@@ -22,7 +22,8 @@ const events = (state = [], action) => {
 //新たな状態遷移後の状態を返す最後の要素に今回作ったevent情報を入れる
       return [...state, { id, ...event }]
     case 'DELETE_EVENT':
-      return state
+//actionで渡ってくるidと等しくないものだけ残る例えばid123あって2を選択した場合にはid13だけ残る
+      return state.filter( event => event.id !== action.id )
     case 'DELETE_ALL_EVENTS':
       return []
     default:
