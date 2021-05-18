@@ -8,7 +8,10 @@ import reducer from "../reducers";
 //useReducer第一引数にreducer第二引数defaultでどうしたいか
 //第三引数初期化時の行いたい処理
 const App = () => {
-  const [state, dispatch] = useReducer(reducer, []);
+  const initialState = {
+    events: []
+  }
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
     <AppContext.Provider value={{ state, dispatch }}>
