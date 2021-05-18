@@ -9,8 +9,9 @@ import reducer from "../reducers";
 //第三引数初期化時の行いたい処理
 const App = () => {
   const initialState = {
-    events: []
-  }
+    events: [],
+    operationLogs: [],
+  };
   const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
